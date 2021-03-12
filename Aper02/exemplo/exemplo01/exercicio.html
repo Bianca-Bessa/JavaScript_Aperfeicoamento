@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="numeros" placeholder="Digite 5 números aqui" maxlength="5" type="text">
+    <button id="calcular">Clique aqui para calcular a media</button>
+    <p id="media"></p>
+    <script>
+        const input = document.getElementById("numeros");
+        const button = document.getElementById("calcular");
+        const media = document.getElementById("media");
+        button.addEventListener('click', (a) => {
+            if (isNaN(input.value)) { return alert('Por favor digite somente números') };
+            if (input.value.length != 5) { return alert('Por favor digite 5 números') };
+            const numbers = input.value.split('').map(x => parseInt(x));
+            const calculoMedia = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+            media.innerHTML = calculoMedia;
+        });
+    </script>
+</body>
+
+</html>

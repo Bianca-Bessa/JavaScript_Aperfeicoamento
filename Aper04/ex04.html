@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map, filter e find</title>
+</head>
+<body>
+
+    <p id="res"></p>
+
+    <script>
+        var res = document.getElementById('res');
+
+        const usuarios = [
+            { nome: 'Caio', idade: 25, empresa: 'Aplle' },
+            { nome: 'Tiago', idade: 35, empresa: 'Microsoft'},
+            { nome: 'Felipe', idade: 30, empresa: 'Apple' },
+            { nome: 'Bianca', idade: 35, empresa: 'Apple' },
+            { nome: 'Luana', idade: 37, empresa: 'Apple' },
+        ];
+
+        function mapa(item) {
+            var nomes = [item.nome, item.idade, item.empresa].join('');
+            return (nomes + '<br>');
+        }
+        res.innerHTML = (usuarios.map(mapa) + '<br>');
+
+        var filtro = usuarios.filter(function(valor){
+            if(valor.empresa == 'Apple' && valor.idade > 30){
+                res.innerHTML += valor.nome + ' ';
+                res.innerHTML += valor.idade + ' ';
+                res.innerHTML += valor.empresa + '<br>';
+            }
+        });
+
+        var achar = usuarios.find(function(valor){
+            if(valor.empresa == 'Google'){
+                res.innerHTML += valor.nome + ' ';
+                res.innerHTML += valor.idade + ' ';
+                res.innerHTML += valor.empresa + '<br>';
+            }
+            else{
+                res.innerHTML = undefined;
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

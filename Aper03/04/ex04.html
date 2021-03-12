@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quantidade de letras</h2>
+    <input type="text" id="texto">
+    <input type="button" id="botao" value="Quantidade">
+    <p id="res"></p>
+
+    <script>
+        var texto = document.getElementById('texto');
+        var botao = document.getElementById('botao');
+        
+        botao.addEventListener('click', function(){
+            res.innerHTML = texto.value.length
+        });
+    </script>
+</body>
+</html>
